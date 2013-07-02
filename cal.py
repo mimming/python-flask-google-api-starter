@@ -63,6 +63,8 @@ def oauth2callback():
       print "Unable to get an access token because ", e.message
 
     # store these credentials for the current user in the session
+    # This stores them in a cookie, which is insecure. Update this
+    # with something better if you deploy to production land
     session['credentials'] = credentials
 
   return redirect(url_for('index'))
